@@ -155,13 +155,13 @@ flowchart TD
     classDef process fill:#e3f2fd
     classDef decision fill:#fff3e0
     classDef error fill:#ffebee
-    classDef end fill:#f3e5f5
+    classDef endpoint fill:#f3e5f5
     
     class START start
     class NGINX,CONTROLLER,SERVICE,REPOSITORY,DATABASE,RESPONSE,DTO,JSON process
     class SECURITY,VALIDATE,CACHE decision
     class UNAUTHORIZED,BAD_REQUEST error
-    class CLIENT end
+    class CLIENT endpoint
 ```
 
 ## Security Architecture Flow
