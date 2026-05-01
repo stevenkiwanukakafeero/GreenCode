@@ -24,6 +24,10 @@ public class UserService {
         return userRepository.findAll();
     }
 
+    public List<User> getActiveUser(){
+        return userRepository.findByActiveTrue();
+    }
+
     public Optional<User> getUserById(Long id) {
         return userRepository.findById(id);
     }
@@ -38,7 +42,7 @@ public class UserService {
 
     private void validateUserInput(User user, boolean requirePassword) {
         if (user == null) {
-            throw new IllegalArgumentException("User details must not bre null");
+            throw new IllegalArgumentException("User details must not be null");
         }
         if (user.getUsername() == null || user.getUsername().trim().isEmpty()) {
             throw new IllegalArgumentException("Username must not be empty");
